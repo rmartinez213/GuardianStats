@@ -1,24 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './style.css';
+import NavSlide from './script'
+import SearchPlayer from './NewsAPI'
 
 function App() {
+
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <nav>
+        <div className='logo'>
+          <h4>Guardian Home</h4>
+        </div>
+
+        <ul className='nav-links'>
+          <li><a href='#'>Home</a></li>
+          <li><a href='#' onClick={SearchPlayer}>News</a></li>
+          <li><a href='#'>Guardian</a></li>
+          <li><a href='#'>Wiki</a></li>
+        </ul>
+
+        <div className='burger' onClick={NavSlide}>
+          <div className='line1'></div>
+          <div className='line2'></div>
+          <div className='line3'></div>
+        </div>
+      </nav>
+
+
     </div>
   );
 }

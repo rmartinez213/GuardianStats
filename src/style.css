@@ -1,0 +1,136 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5d4954;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    color: rgb(212, 211, 211);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    color: rgb(212, 211, 211);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger{
+    display: none;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(212, 211, 211);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width:768px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: #5d4954;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li{
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .nav-links{
+        width: 50%;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+    width: 100%;
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px)
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px)
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Hover Effect */
+.nav-links li a{
+    display: inline-block;
+}
+
+.nav-links li a::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: rgb(212, 211, 211);
+    transition: width .3s;
+}
+
+.nav-links li a:hover::after{
+    width: 100%;
+    transition: width .3s;
+}
