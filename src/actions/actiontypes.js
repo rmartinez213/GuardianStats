@@ -1,0 +1,4 @@
+export const HOME_STATUS = 'HOME_STATUS';
+export const NEWS_STATUS = 'NEWS_STATUS';
+export const GUARDIAN_STATUS = 'GUARDIAN_STATUS';
+export const WIKI_STATUS = 'WIKI_STATUS';
