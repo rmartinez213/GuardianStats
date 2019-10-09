@@ -1,37 +1,21 @@
 import React from 'react';
 import './App.css';
 import './style.css';
-import NavSlide from './script'
-import SearchPlayer from './NewsAPI'
+import Home from './HomeClass'
+import NavigationBar from './NavigationBar'
 
-function App() {
-
+class App extends React.Component{
  
-
+render(){
   return (
-    <div>
-      <nav>
-        <div className='logo'>
-          <h4>Guardian Home</h4>
-        </div>
+      <div>
+        <NavigationBar />
 
-        <ul className='nav-links'>
-          <li><a href='#'>Home</a></li>
-          <li><a href='#' onClick={SearchPlayer}>News</a></li>
-          <li><a href='#'>Guardian</a></li>
-          <li><a href='#'>Wiki</a></li>
-        </ul>
+        <Home />
 
-        <div className='burger' onClick={NavSlide}>
-          <div className='line1'></div>
-          <div className='line2'></div>
-          <div className='line3'></div>
-        </div>
-      </nav>
-
-
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
