@@ -9,6 +9,7 @@ import NavigationBar from './NavigationBar'
 import { connect } from 'react-redux';
 import { isHome, isNews, isGuardian, isWiki} from './actions/actiontypesActions'
 
+
 class App extends React.Component {
 
 

@@ -22,35 +22,79 @@ class NavigationBar extends React.Component{
     }
 
     home() {
-        this.props.isHome(true);
-        this.props.isNews(false);
-        this.props.isGuardian(false);
-        this.props.isWiki(false);
-        this.setState({pageHeader: 'Home'})
+        if ($(window).width() < 768){
+            this.props.isHome(true);
+            this.props.isNews(false);
+            this.props.isGuardian(false);
+            this.props.isWiki(false);
+            this.setState({pageHeader: 'Home'})
+        }
+        else{
+            setTimeout(() => {
+                this.props.isHome(true);
+                this.props.isNews(false);
+                this.props.isGuardian(false);
+                this.props.isWiki(false);
+                this.setState({pageHeader: 'Home'})
+            }, 1000)
+        }
     }
 
     news() {
-        this.props.isHome(false);
-        this.props.isNews(true);
-        this.props.isGuardian(false);
-        this.props.isWiki(false);
-        this.setState({pageHeader: 'News'})
+        if ($(window).width() < 768){
+            this.props.isHome(false);
+            this.props.isNews(true);
+            this.props.isGuardian(false);
+            this.props.isWiki(false);
+            this.setState({pageHeader: 'News'})
+        }
+        else{
+            setTimeout(() => {
+                this.props.isHome(false);
+                this.props.isNews(true);
+                this.props.isGuardian(false);
+                this.props.isWiki(false);
+                this.setState({pageHeader: 'News'})
+            }, 1000)
+        }
     }
 
     guardian() {
-        this.props.isHome(false);
-        this.props.isNews(false);
-        this.props.isGuardian(true);
-        this.props.isWiki(false);
-        this.setState({pageHeader: 'Stats'})
+        if ($(window).width() < 768){
+            this.props.isHome(false);
+            this.props.isNews(false);
+            this.props.isGuardian(true);
+            this.props.isWiki(false);
+            this.setState({pageHeader: 'Stats'})
+        }
+        else{
+            setTimeout(() => {
+                this.props.isHome(false);
+                this.props.isNews(false);
+                this.props.isGuardian(true);
+                this.props.isWiki(false);
+                this.setState({pageHeader: 'Stats'})
+            }, 1000)
+        }
     }
 
     wiki() {
-        this.props.isHome(false);
-        this.props.isNews(false);
-        this.props.isGuardian(false);
-        this.props.isWiki(true);
-        this.setState({pageHeader: 'Wiki'})
+        if ($(window).width() < 768){
+            this.props.isHome(false);
+            this.props.isNews(false);
+            this.props.isGuardian(false);
+            this.props.isWiki(true);
+            this.setState({pageHeader: 'Wiki'})
+        }
+        else{
+            setTimeout(() => {
+                this.props.isHome(false);
+                this.props.isNews(false);
+                this.props.isGuardian(false);
+                this.props.isWiki(true);
+                this.setState({pageHeader: 'Wiki'})
+            }, 1000)
+        }
     }
 
     navSlide() {
@@ -96,10 +140,10 @@ class NavigationBar extends React.Component{
                 </div>
 
                 <ul className='nav-links'>
-                    <li><a href='#' onClick={ () => { this.navSlide(); setTimeout( () => { this.home() }, 1000);} }>Home</a></li>
-                    <li><a href='#' onClick={ () => { this.navSlide(); setTimeout( () => { this.news() }, 1000);} } >News</a></li>
-                    <li><a href='#' onClick={ () => { this.navSlide(); setTimeout( () => { this.guardian() }, 1000);} }>Guardian</a></li>
-                    <li><a href='#' onClick={ () => { this.navSlide(); setTimeout( () => { this.wiki();}, 1000);} }>Wiki</a></li>
+                    <li><a href='#' onClick={ () => { this.navSlide(); this.home();} }>Home</a></li>
+                    <li><a href='#' onClick={ () => { this.navSlide(); this.news();} } >News</a></li>
+                    <li><a href='#' onClick={ () => { this.navSlide(); this.guardian();} }>Guardian</a></li>
+                    <li><a href='#' onClick={ () => { this.navSlide(); this.wiki();} }>Wiki</a></li>
                 </ul>
 
                 <div className='burger' onClick={this.navSlide}>
