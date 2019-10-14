@@ -22,6 +22,20 @@ nav{
     font-size: 20px;
 }
 
+/* Bar is z-index: 0 */
+.logo-image{
+    float: left;
+}
+
+.logo-text{
+    z-index: 2 !important;
+    position: relative;
+}
+
+.logo-header{
+    z-index: 2;
+}
+
 .nav-links{
     display: flex;
     justify-content: space-around;
@@ -81,6 +95,41 @@ nav{
         cursor: pointer;
     }
 }
+
+.nav-click-lg{
+    top: 0vh;
+    height: 100vh;
+    background-color: #5d4954;
+    width: 100%;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in;
+    z-index: 1;
+}
+
+.nav-click-active{
+    animation: nav-click-animation 2.5s;
+    width: 100%;
+}
+
+@keyframes nav-click-animation{
+    0%{
+        transform: translateY(-100%);
+    }
+
+    40%{
+        transform: translateY(0%);
+    }
+
+    60%{
+        transform: translateY(0%);
+    }
+
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
 
 @media screen and (min-width: 769px) and (max-width: 1024px){
     .nav-links{
