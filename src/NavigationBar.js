@@ -92,7 +92,7 @@ class NavigationBar extends React.Component{
         return(
             <nav>
                 <div className='logo'>
-                    <h4><span className='logo-text'>Guardian</span> <span className='logo-header'>{this.state.pageHeader}</span></h4>
+                    <span className='logo-image'><img src={logo} width={30} height={30}/></span><h4><span className='logo-text'>Guardian</span> <span className='logo-header'>{this.state.pageHeader}</span></h4>
                 </div>
 
                 <ul className='nav-links'>

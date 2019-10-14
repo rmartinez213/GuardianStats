@@ -20,15 +20,19 @@ nav{
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 20px;
+    margin-left: 20px;
+    display: inline-flex;
 }
 
 /* Bar is z-index: 0 */
 .logo-image{
-    float: left;
+    margin-right: 8px;
+    z-index: 2;
+    position: relative;
 }
 
 .logo-text{
-    z-index: 2 !important;
+    z-index: 2;
     position: relative;
 }
 
